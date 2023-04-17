@@ -1,8 +1,9 @@
 import "./App.css";
+import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 const App = () => {
-  const expenses = [
+  const expensesInitial = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -23,9 +24,14 @@ const App = () => {
       date: new Date(2021, 5, 13),
     },
   ];
+  const [expenses, setExpenses] = useState(expensesInitial);
+  const receiveExpenseDataHandler = (expenseData) => {
+    setExpenses([expenseData, ...expensesInitial]);
+    console.log(expenseData);
+  };
   return (
     <div>
-      <NewExpense />
+      <NewExpense onReceiveExpenseData={receiveExpenseDataHandler} />
       <Expenses items={expenses} />
     </div>
   );
