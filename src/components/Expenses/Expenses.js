@@ -5,6 +5,7 @@ import Card from "../Ui/Card";
 import "./Expenses.css";
 import ExpensesList from "./ExpensesList";
 const Expenses = (props) => {
+  // console.log(props.items);
   const [filteredYear, setFilteredYear] = useState("2020");
   // const [expenses, setExpenses] = useState(props.items);
   const filteredExpenses = props.items.filter((expenses) => {
@@ -34,7 +35,8 @@ const Expenses = (props) => {
         onChangeFilter={filterChangeHandler}
       />
       {/* {expenseContent} */}
-      <ExpensesList items={filteredExpenses}/>
+      {/* {console.log(filteredExpenses)} */}
+      <ExpensesList items={filteredExpenses} />
       {/* {[
         <ExpenseItem
           id={props.items[0].id}

@@ -26,6 +26,10 @@ const DUMMY_EXPENSES = [
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
   const addExpenseHandler = (expense) => {
+    /**
+     * will add expense along with the previous expenses
+     * passing method inside setExpenses will ensure that the latest state is used
+     */
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
