@@ -4,7 +4,6 @@ import ExpenseItem from "./ExpenseItem";
 const ExpensesList = (props) => {
   if (props.items.length === 0) {
     // alert("No Expenses Found");
-    console.log("No Expenses Found");
     return <h2 className="expenses-list__fallback">No Expenses Found</h2>;
   }
   //   console.log(props.items.map(expense=>expense.date));

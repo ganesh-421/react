@@ -6,7 +6,6 @@ import "./Expenses.css";
 import ExpensesList from "./ExpensesList";
 import ExpensesChart from "./ExpensesChart";
 const Expenses = (props) => {
-  // console.log(props.items);
   const [filteredYear, setFilteredYear] = useState("2020");
   // const [expenses, setExpenses] = useState(props.items);
   const filteredExpenses = props.items.filter((expenses) => {
@@ -29,6 +28,7 @@ const Expenses = (props) => {
   //     />
   //   ));
   // }
+  console.log(filteredExpenses);
   return (
     <Card className="expenses">
       <ExpensesChart expenses={filteredExpenses} />
